@@ -1,5 +1,6 @@
 ## Student Performance Prediction
 End-to-End Simple Machine Learning Web Application
+https://studentperformance-prediction-1.onrender.com/
 
 
 ## Software And Tools Requirements
@@ -18,7 +19,7 @@ Python,Flask,scikit-learn,NumPy,Pandas,Pickle
 
 This project implements an end-to-end machine learning pipeline to predict student academic performance using multivariate linear regression.
 
-The primary objective of this project was to move a trained model from the notebook stage to a fully deployed web application. It was developed as a hands-on exercise to understand the complete lifecycle of a machine learning system — from data preparation and model training to serialization, backend integration, and cloud deployment.
+The primary objective of this project was to move a trained model from the notebook stage to a fully deployed web application. It was developed as a hands-on exercise to understand the complete lifecycle of a machine learning system - from data preparation and model training to serialization, backend integration, and cloud deployment.
 
 The application enables real-time prediction of a student’s performance index based on key study-related inputs.
 
