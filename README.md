@@ -33,4 +33,6 @@ To push to repo git command
 git add requirement.txt
 git add. # add all files
 git commit -m "commit_message" # to push from local to staging
+git push origin main
+'''
 
