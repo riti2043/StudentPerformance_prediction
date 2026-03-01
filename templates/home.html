@@ -1,3 +1,146 @@
-<h1>
-    Hello World
-</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Performance Prediction</title>
+
+    <style>
+        body {
+            background-color: #080e1f;
+            font-family: "Rockwell Extra Bold", Rockwell, serif;
+            color: #abb7b7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 60px;
+        }
+
+        .left-panel {
+            width: 50%;
+        }
+
+        .right-panel {
+            width: 40%;
+            line-height: 1.8;
+        }
+
+        h1 {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            background-color: #10182f;
+            border: 1px solid #abb7b7;
+            border-radius: 5px;
+            color: #abb7b7;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            margin-top: 25px;
+            background-color: #abb7b7;
+            color: #080e1f;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #d0d8d8;
+        }
+
+        .prediction {
+            margin-top: 25px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .graph-container {
+            margin-top: 25px;
+        }
+
+        ul {
+            margin-top: 15px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="main-container">
+
+    <!-- LEFT SIDE -->
+    <div class="left-panel">
+
+        <form action="/predict" method="post">
+
+            <label>Hours Studied</label>
+            <input type="number" name="hours_studied" step="any" required>
+
+            <label>Previous Scores</label>
+            <input type="number" name="previous_scores" step="any" required>
+
+            <label>Sleep Hours</label>
+            <input type="number" name="sleep_hours" step="any" required>
+
+            <label>Sample Question Papers Practiced</label>
+            <input type="number" name="sample_papers" step="any" required>
+
+            <input type="submit" value="Predict Performance">
+
+        </form>
+
+        {% if prediction_text %}
+            <div class="prediction">
+                {{ prediction_text }}
+            </div>
+        {% endif %}
+
+        
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="right-panel">
+
+        <h1>Student Performance Prediction</h1>
+
+        <p>
+            This application estimates a student’s academic performance based on key study-related inputs:
+        </p>
+
+        <ul>
+            <li>Number of hours studied</li>
+            <li>Previous test scores (in percentage)</li>
+            <li>Average sleep duration during exam season</li>
+            <li>Practice intensity through sample question papers</li>
+        </ul>
+
+        <p>
+            It was developed to demonstrate an end-to-end machine learning pipeline for student performance prediction using multivariate linear regression.
+        </p>
+
+        <p>
+            Predictions are generated and displayed alongside a comparative performance visualization.
+        </p>
+
+    </div>
+
+</div>
+
+</body>
+</html>
